@@ -2,6 +2,8 @@ p, h1 {
   text-align: center
 }
 
-html {
-    background: url(/img/bg4k.jpg);
-   }
+#bg{
+  width: 5464px;
+  height: 3643px;
+  background: url(/img/bg4k.jpg);
+}
