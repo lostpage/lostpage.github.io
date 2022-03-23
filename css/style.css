@@ -4,13 +4,4 @@ p, h1 {
   background-color: white;
 }
 
-#bg {
-  width: 800px;
-  height: 600px;
-  background: url(/img/bg4k.jpg);
-  background-position: center;
-  background-repeat: no-repeat; 
-  background-size: contain;
-}
-
 
