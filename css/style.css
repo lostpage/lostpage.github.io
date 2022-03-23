@@ -3,6 +3,8 @@ p, h1 {
 }
 
 body {
-    background: #c7b39b url(img/02_elves_mf.png);
+    background: url(img/02_elves_mf.png);
     background-size: auto;
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
    }
