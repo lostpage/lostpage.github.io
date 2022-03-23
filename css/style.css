@@ -1,3 +1,7 @@
 p, h1 {
   text-align: center
 }
+
+body {
+    background: #c7b39b url(img/bg4k.jpg); /* Цвет фона и путь к файлу */
+   }
