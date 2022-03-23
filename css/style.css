@@ -1,14 +1,16 @@
 
+p, h1 {
+  text-align: center
+  background-color: white;
+}
+
 #bg {
   width: 1920px;
   height: 1080px;
   background: url(/img/bg4k.jpg);
+  background-position: center;
   background-repeat: no-repeat; 
   background-size: contain;
 }
 
 
-p, h1 {
-  text-align: center
-  background: #D9FFAD;
-}
