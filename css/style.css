@@ -1,7 +1,6 @@
 p, h1 {
   text-align: center
   background-color: white;
-
 }
 
 #bg{
@@ -9,4 +8,6 @@ p, h1 {
   height: 1080px;
   background: url(/img/bg4k.jpg);
   background-repeat: no-repeat; 
+  text-align: center
+  background-color: white;
 }
