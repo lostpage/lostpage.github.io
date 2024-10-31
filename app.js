@@ -49,7 +49,7 @@
                 case 'ArrowRight':
                     playerVelocity.x = speed; // Двигаем персонажа вправо
                     break;
-                case ' ': // Пробел для прыжка
+                case 'Space': // Пробел для прыжка
                     if (!isJumping) {
                         isJumping = true; // Начинаем прыжок
                         jumpHeight = 1; // Устанавливаем начальную высоту прыжка
