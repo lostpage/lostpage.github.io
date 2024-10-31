@@ -5,3 +5,9 @@ const renderer = new THREE.WebGLRenderer();
 
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+
+const platformGeometry = new THREE.BoxGeometry(5, 0.5, 5);
+const platformMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const platform = new THREE.Mesh(platformGeometry, platformMaterial);
+platform.position.y = -0.25; // Позиционируем платформу
+scene.add(platform);
