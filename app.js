@@ -2,10 +2,10 @@
 
         // Инициализация сцены, камеры и рендерера
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, 720 / 1080, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(75, 1920 / 1080, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
 
-        renderer.setSize(720, 1080);
+        renderer.setSize(1920, 1080);
         document.body.appendChild(renderer.domElement);
 
         // Создание платформы
