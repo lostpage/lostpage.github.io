@@ -3,7 +3,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer();
 
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(720, 1080);
 document.body.appendChild(renderer.domElement);
 
 
@@ -36,7 +36,7 @@ function animate() {
 }
 
 
-
+animate(); // Запускаем анимацию
 
 
 let playerVelocity = new THREE.Vector3(); // Вектор скорости персонажа
@@ -71,6 +71,3 @@ document.addEventListener('keyup', (event) => {
             break;
     }
 });
-
-
-animate(); // Запускаем анимацию
