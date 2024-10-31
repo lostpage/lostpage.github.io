@@ -27,11 +27,47 @@ camera.lookAt(new THREE.Vector3(0, 0, 0)); // Направляем камеру 
 
 
 function animate() {
-    requestAnimationFrame(animate); // Запрашиваем следующий кадр анимации
+    requestAnimationFrame(animate);
 
-    // Здесь можно добавить логику для перемещения персонажа
+    // Обновляем позицию персонажа
+    player.position.add(playerVelocity);
 
-    renderer.render(scene, camera); // Рендерим сцену с использованием камеры
+    renderer.render(scene, camera);
 }
 
+
 animate(); // Запускаем анимацию
+
+
+let playerVelocity = new THREE.Vector3(); // Вектор скорости персонажа
+const speed = 0.1; // Скорость перемещения
+
+document.addEventListener('keydown', (event) => {
+    switch (event.key) {
+        case 'ArrowUp':
+            playerVelocity.z = -speed; // Двигаем персонажа вперед
+            break;
+        case 'ArrowDown':
+            playerVelocity.z = speed; // Двигаем персонажа назад
+            break;
+        case 'ArrowLeft':
+            playerVelocity.x = -speed; // Двигаем персонажа влево
+            break;
+        case 'ArrowRight':
+            playerVelocity.x = speed; // Двигаем персонажа вправо
+            break;
+    }
+});
+
+document.addEventListener('keyup', (event) => {
+    switch (event.key) {
+        case 'ArrowUp':
+        case 'ArrowDown':
+            playerVelocity.z = 0; // Останавливаем движение по оси Z
+            break;
+        case 'ArrowLeft':
+        case 'ArrowRight':
+            playerVelocity.x = 0; // Останавливаем движение по оси X
+            break;
+    }
+});
