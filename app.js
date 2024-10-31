@@ -32,6 +32,12 @@ function animate() {
     // Обновляем позицию персонажа
     player.position.add(playerVelocity);
 
+    // Ограничиваем движение персонажа в пределах платформы
+    if (player.position.x < -2.5) player.position.x = -2.5; // Левый край платформы
+    if (player.position.x > 2.5) player.position.x = 2.5; // Правый край платформы
+    if (player.position.z < -2.5) player.position.z = -2.5; // Задний край платформы
+    if (player.position.z > 2.5) player.position.z = 2.5; // Передний край платформы
+
     renderer.render(scene, camera);
 }
 
@@ -69,5 +75,45 @@ document.addEventListener('keyup', (event) => {
         case 'ArrowRight':
             playerVelocity.x = 0; // Останавливаем движение по оси X
             break;
+    }
+});
+
+
+let isJumping = false; // Флаг, указывающий, прыгает ли персонаж
+const jumpHeight = 1; // Высота прыжка
+const gravity = -0.05; // Сила тяжести
+
+function animate() {
+    requestAnimationFrame(animate);
+
+    // Обновляем позицию персонажа
+    player.position.add(playerVelocity);
+
+    // Ограничиваем движение персонажа в пределах платформы
+    if (player.position.x < -2.5) player.position.x = -2.5;
+    if (player.position.x > 2.5) player.position.x = 2.5;
+    if (player.position.z < -2.5) player.position.z = -2.5;
+    if (player.position.z > 2.5) player.position.z = 2.5;
+
+    // Обработка прыжка
+    if (isJumping) {
+        player.position.y += jumpHeight; // Поднимаем персонажа
+        jumpHeight += gravity; // Применяем силу тяжести
+        if (player.position.y <= 1) { // Если персонаж достиг земли
+            player.position.y = 1; // Устанавливаем его на уровень платформы
+            isJumping = false; // Завершаем прыжок
+            jumpHeight = 1; // Сбрасываем высоту прыжка
+        }
+    }
+
+    renderer.render(scene, camera);
+}
+
+// Обработка нажатия пробела для прыжка
+document.addEventListener('keydown', (event) => {
+    if (event.key === ' ') {
+        if (!isJumping) {
+            isJumping = true; // Начинаем прыжок
+        }
     }
 });
